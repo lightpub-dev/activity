@@ -61,6 +61,7 @@ import (
 	propertyreplies "github.com/go-fed/activity/streams/impl/activitystreams/property_replies"
 	propertyresult "github.com/go-fed/activity/streams/impl/activitystreams/property_result"
 	propertysensitive "github.com/go-fed/activity/streams/impl/activitystreams/property_sensitive"
+	propertysharedinbox "github.com/go-fed/activity/streams/impl/activitystreams/property_sharedinbox"
 	propertyshares "github.com/go-fed/activity/streams/impl/activitystreams/property_shares"
 	propertysource "github.com/go-fed/activity/streams/impl/activitystreams/property_source"
 	propertystartindex "github.com/go-fed/activity/streams/impl/activitystreams/property_startindex"
@@ -1901,6 +1902,19 @@ func (this Manager) DeserializeSensitivePropertyActivityStreams() func(map[strin
 func (this Manager) DeserializeServiceActivityStreams() func(map[string]interface{}, map[string]string) (vocab.ActivityStreamsService, error) {
 	return func(m map[string]interface{}, aliasMap map[string]string) (vocab.ActivityStreamsService, error) {
 		i, err := typeservice.DeserializeService(m, aliasMap)
+		if i == nil {
+			return nil, err
+		}
+		return i, err
+	}
+}
+
+// DeserializeSharedInboxPropertyActivityStreams returns the deserialization
+// method for the "ActivityStreamsSharedInboxProperty" non-functional property
+// in the vocabulary "ActivityStreams"
+func (this Manager) DeserializeSharedInboxPropertyActivityStreams() func(map[string]interface{}, map[string]string) (vocab.ActivityStreamsSharedInboxProperty, error) {
+	return func(m map[string]interface{}, aliasMap map[string]string) (vocab.ActivityStreamsSharedInboxProperty, error) {
+		i, err := propertysharedinbox.DeserializeSharedInboxProperty(m, aliasMap)
 		if i == nil {
 			return nil, err
 		}

@@ -440,6 +440,9 @@ var ActivityStreamsResultPropertyName string = "result"
 // ActivityStreamsSensitivePropertyName is the string literal of the name for the sensitive property in the ActivityStreams vocabulary.
 var ActivityStreamsSensitivePropertyName string = "sensitive"
 
+// ActivityStreamsSharedInboxPropertyName is the string literal of the name for the sharedInbox property in the ActivityStreams vocabulary.
+var ActivityStreamsSharedInboxPropertyName string = "sharedInbox"
+
 // ActivityStreamsSharesPropertyName is the string literal of the name for the shares property in the ActivityStreams vocabulary.
 var ActivityStreamsSharesPropertyName string = "shares"
 

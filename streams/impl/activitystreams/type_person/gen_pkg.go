@@ -154,6 +154,10 @@ type privateManager interface {
 	// method for the "ActivityStreamsSensitiveProperty" non-functional
 	// property in the vocabulary "ActivityStreams"
 	DeserializeSensitivePropertyActivityStreams() func(map[string]interface{}, map[string]string) (vocab.ActivityStreamsSensitiveProperty, error)
+	// DeserializeSharedInboxPropertyActivityStreams returns the
+	// deserialization method for the "ActivityStreamsSharedInboxProperty"
+	// non-functional property in the vocabulary "ActivityStreams"
+	DeserializeSharedInboxPropertyActivityStreams() func(map[string]interface{}, map[string]string) (vocab.ActivityStreamsSharedInboxProperty, error)
 	// DeserializeSharesPropertyActivityStreams returns the deserialization
 	// method for the "ActivityStreamsSharesProperty" non-functional
 	// property in the vocabulary "ActivityStreams"

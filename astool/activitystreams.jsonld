@@ -4962,6 +4962,55 @@
           "url": "https://www.w3.org/TR/activitypub/#inbox"
         },
         {
+          "id": "https://www.w3.org/TR/activitypub/#sharedInbox",
+          "type": [
+            "rdf:Property",
+            "owl:FunctionalProperty"
+          ],
+          "notes": "A reference to an ActivityStreams OrderedCollection comprised of all the messages received by the actor.",
+          "domain": {
+            "type": "owl:Class",
+            "unionOf": [
+              {
+                "type": "owl:Class",
+                "url": "https://www.w3.org/ns/activitystreams#Application",
+                "name": "Application"
+              },
+              {
+                "type": "owl:Class",
+                "url": "https://www.w3.org/ns/activitystreams#Group",
+                "name": "Group"
+              },
+              {
+                "type": "owl:Class",
+                "url": "https://www.w3.org/ns/activitystreams#Organization",
+                "name": "Organization"
+              },
+              {
+                "type": "owl:Class",
+                "url": "https://www.w3.org/ns/activitystreams#Person",
+                "name": "Person"
+              },
+              {
+                "type": "owl:Class",
+                "url": "https://www.w3.org/ns/activitystreams#Service",
+                "name": "Service"
+              }
+            ]
+          },
+          "isDefinedBy": "https://www.w3.org/TR/activitypub/#sharedInbox",
+          "range": {
+            "type": "owl:Class",
+            "unionOf": {
+              "type": "owl:Class",
+              "url": "https://www.w3.org/ns/activitystreams#OrderedCollection",
+              "name": "OrderedCollection"
+            }
+          },
+          "name": "sharedInbox",
+          "url": "https://www.w3.org/TR/activitypub/#sharedInbox"
+        },
+        {
           "id": "https://www.w3.org/TR/activitypub/#outbox",
           "type": [
             "rdf:Property",

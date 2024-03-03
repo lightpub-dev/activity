@@ -104,6 +104,9 @@ type ActivityStreamsPerson interface {
 	// GetActivityStreamsSensitive returns the "sensitive" property if it
 	// exists, and nil otherwise.
 	GetActivityStreamsSensitive() ActivityStreamsSensitiveProperty
+	// GetActivityStreamsSharedInbox returns the "sharedInbox" property if it
+	// exists, and nil otherwise.
+	GetActivityStreamsSharedInbox() ActivityStreamsSharedInboxProperty
 	// GetActivityStreamsShares returns the "shares" property if it exists,
 	// and nil otherwise.
 	GetActivityStreamsShares() ActivityStreamsSharesProperty
@@ -240,6 +243,8 @@ type ActivityStreamsPerson interface {
 	SetActivityStreamsReplies(i ActivityStreamsRepliesProperty)
 	// SetActivityStreamsSensitive sets the "sensitive" property.
 	SetActivityStreamsSensitive(i ActivityStreamsSensitiveProperty)
+	// SetActivityStreamsSharedInbox sets the "sharedInbox" property.
+	SetActivityStreamsSharedInbox(i ActivityStreamsSharedInboxProperty)
 	// SetActivityStreamsShares sets the "shares" property.
 	SetActivityStreamsShares(i ActivityStreamsSharesProperty)
 	// SetActivityStreamsSource sets the "source" property.
